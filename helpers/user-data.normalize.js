@@ -1,6 +1,5 @@
-const dayJs = require('dayjs');
-
-const { normalizeUserPhone } = require('./normalizeUserPhone');
+const { normalizeUserPhone } = require('./user-phone.normalize');
+const { normalizeUserDate } = require('./user-date.normalize');
 
 module.exports = {
 
@@ -21,16 +20,18 @@ module.exports = {
 
         userToNormalize.amount = Number(userToNormalize.amount)
 
-        userToNormalize.date = dayjs(userToNormalize.date, 'YYYY-MM-DD')
-        console.log(userToNormalize.date);
+        userToNormalize.date = normalizeUserDate(userToNormalize.date)
 
         if(userToNormalize.cc) {
             userToNormalize.costCenterNum = userToNormalize.cc.slice(3)
         }
 
         const fieldsToRemove = [
+            'first_name',
+            'last_name',
             'user',
-            'email'
+            'email',
+            'cc'
         ];
 
         fieldsToRemove.forEach((field) => {

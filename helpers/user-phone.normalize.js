@@ -6,8 +6,8 @@ module.exports = {
 
         if (match) {
             let intlCode = (match[4] ? '+380' : '')
-            return [intlCode, match[2], match[3], match[4]].join('')
 
+            return [intlCode, match[2], match[3], match[4]].join('')
         }
 
         return null;
