@@ -1,0 +1,11 @@
+{
+  "name": "test_task_CSV_files_into_JSON",
+  "version": "1.0.0",
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "jszip": "^3.7.1"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
